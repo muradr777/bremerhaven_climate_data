@@ -1,7 +1,5 @@
 #!/bin/bash
 source data/content.sh
-echo "Content-type: text/html"
-echo ""
 
 echo '
 
