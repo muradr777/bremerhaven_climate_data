@@ -45,5 +45,6 @@ echo '						</ul>
 echo "		<small>$footer_year <br/>© $team_name</small>"
 echo '	</div>
 	</footer>
-
+	</body>
+</html>
 '

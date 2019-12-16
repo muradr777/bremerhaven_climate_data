@@ -12,12 +12,11 @@ echo '
 			<div class="row">
 '
         cat data/categories.dat | while read c_link c_title c_icon; do
-          echo '
+          	echo '
 			    	<div class="col-md-4">
 					    <article class="category-card">
-					    	<div class="category-card__ico">
-          '
-			    echo "  <img src=\"$c_icon\" title=\"Icons made by Freepik and Vitaly Gorbachev from www.flaticon.com\" alt=\"$c_title\">
+					    	<div class="category-card__ico"> '
+	    	echo "  <img src=\"$c_icon\" title=\"Icons made by Freepik and Vitaly Gorbachev from www.flaticon.com\" alt=\"$c_title\">
 			          </div>
 					    	<div class=\"category-card__title\">
 							  	<a href=\"$c_link\" class=\"link__block\"></a>
@@ -36,8 +35,3 @@ echo '
 '
 
 ./footer.sh
-
-echo '
-</body>
-</html>
-'

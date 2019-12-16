@@ -34,9 +34,4 @@ echo '
 	</main>
 '
 
-./footer1.sh
-
-echo '
-</body>
-</html>
-'
+./footer.sh
