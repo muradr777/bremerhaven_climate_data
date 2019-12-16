@@ -13,9 +13,9 @@ echo '
 		</section>
 
 		<section class="d_table">
+'
 			./table.sh
-		</section>
-
+echo '		</section>
 	</main>
 '
 
