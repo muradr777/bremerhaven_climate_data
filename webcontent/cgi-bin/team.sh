@@ -11,7 +11,7 @@ echo '
 		<section class="categories-container">
 			<div class="row">
 '
-			cat data/team_list.dat | while read name h_username img txt; do
+			cat data/team_list.dat | while read h_username img txt name; do
 				echo "
 					<div class=\"col-md-3\">
 						<article class=\"team-card\">
