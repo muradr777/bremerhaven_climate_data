@@ -12,10 +12,11 @@ echo '
 			<img width="100%" src="../img/plot_test.svg" alt="Plot test" />
 		</section>
 
-		<section class="d_table">
-'
+		<section class="d_table"> '
+		
 			./table.sh
-echo '		</section>
+			
+echo '	</section>
 	</main>
 '
 
