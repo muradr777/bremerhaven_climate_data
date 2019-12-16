@@ -1,3 +1,7 @@
+#!/bin/bash
+echo "Content-type: text/html"
+echo ""
+
 echo '
 <!DOCTYPE html>
 <html lang="en">
