@@ -1,5 +1,20 @@
-#!/bin/bash
 echo '
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	
+	<link rel="stylesheet" href="css/style.css" />
+	
+	 <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Fonawesome 4.7.0 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title>Team08 - Wetter App</title>
+</head>
+<body>
 <nav class="container-fluid navbar navbar-expand-lg navbar-dark bg-dark">
 	  <a class="navbar-brand" href="index.sh">
 	  	<i class="fa fa-bolt text-warning mr-2" aria-hidden="true"></i>Thunder
