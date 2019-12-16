@@ -1,0 +1,3 @@
+data.sh Temperatur ../img/cold.svg
+data.sh Niederschlag ../img/rain.svg
+data.sh Windstaerke ../img/wind.svg
