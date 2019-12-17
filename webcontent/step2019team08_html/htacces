@@ -1,0 +1,2 @@
+# Redirect everything landing on https://...de/step2019team08/ to cgi-bin/ on docker11257
+RedirectPermanent "/step2019team08/" "/docker11257/cgi-bin/index.sh?originalurl="
