@@ -1,5 +1,4 @@
-# STEP - Hochschule Bremerhaven  
-## Team 08 - STEP 2019  
+# STEP 2019 - Hochschule Bremerhaven - Team 08  
 
 **step2019team08-WebProjekt** 
 
