@@ -8,7 +8,7 @@ IFS='=&'
 set -- $QUERY_STRING
 cat_id=$2
 
-cat "data/categories.sh" | while read link title rest; do
+cat data/categories.sh | while read link title rest; do
 	echo "$title <br/>"
 done
 
