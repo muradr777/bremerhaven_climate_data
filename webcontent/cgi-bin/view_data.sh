@@ -7,15 +7,17 @@ echo ""
 SAVE_IFS=$IFS
 IFS='=&'
 set -- $QUERY_STRING
-cat_id=$2
+cat_id=$(($2 + 0)) 
 IFS=$SAVE_IFS
 
 i=0
 cat_title=""
 
 while read c_link c_title c_icon; do
+	cat_id=
 	echo "catid= $cat_id i= $i c_title= $c_title <br>"
 	if [ $i = $cat_id ]; then
+		echo "YEEAAAH"
 		cat_title="$c_title"
 	fi
 	((i+=1))
