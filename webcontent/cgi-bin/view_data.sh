@@ -4,18 +4,20 @@ echo ""
 
 ./header.sh
 
+arr=()
+
 SAVE_IFS=$IFS
 IFS='=&'
 set -- $QUERY_STRING
-cat_id=$(($2 + 0)) 
+arr[0]=$(($2 + 0)) 
 IFS=$SAVE_IFS
 
-cat_title=""
+
 
 i=0
 while read c_link c_title c_icon; do
 	if [ $i = $cat_id ]; then
-		cat_title="$c_title"
+		arr[1]="$c_title"
 	fi
 	((i+=1))
 done <<< $(cat data/categories.dat)
@@ -39,7 +41,7 @@ echo '
 
 		<section class="d_table"> '
 		
-			./table.sh "$cat_id" "$cat_title"
+			./table.sh "${arr[@]}"
 			
 echo '	</section>
 	</main>
