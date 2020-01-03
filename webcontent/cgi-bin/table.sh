@@ -4,7 +4,7 @@ i=0
 # Getting title from page_id($2)
 while read link title resst; do
   if [ $2 = $i ]; then
-    ptitle="$title"
+    echo $title
   fi
   ((i+=1))
 done <<< $(cat "data/categories.dat")
