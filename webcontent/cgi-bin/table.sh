@@ -1,16 +1,8 @@
-# IFS="&="
-# set -- $QUERY_STRING
-i=0
-# Getting title from page_id($2)
-while read link title resst; do
-  if [ $2 = $i ]; then
-    echo $title
-  fi
-  ((i+=1))
-done <<< $(cat "data/categories.dat")
+title=$1
+data_row=$2
 
 echo '<h2 class="table-title">'
-echo "$ptitle Tabelle"
+echo "$title Tabelle"
 echo '</h2>'
 
 echo '
