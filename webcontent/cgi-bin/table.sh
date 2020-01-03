@@ -1,3 +1,5 @@
+echo "$QUERY_STRING"
+
 echo '
 
 <h2 class="table-title">
