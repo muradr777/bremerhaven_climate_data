@@ -1,0 +1,19 @@
+temperature:
+recent_data_bhv: https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/10_minutes/air_temperature/recent/10minutenwerte_TU_00701_akt.zip
+now_data_bhv:    https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/10_minutes/air_temperature/now/10minutenwerte_TU_00701_now.zip
+historical_data: https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/10_minutes/air_temperature/historical/10minutenwerte_tu_00701_19971119_19991231_hist.zip
+                 https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/10_minutes/air_temperature/historical/10minutenwerte_tu_00701_20000101_20091231_hist.zip
+                 https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/10_minutes/air_temperature/historical/10minutenwerte_tu_00701_20100101_20181231_hist.zip
+
+wind:
+10min_now:       https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/10_minutes/wind/now/10minutenwerte_wind_00701_now.zip
+10min_recent:    https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/10_minutes/wind/recent/10minutenwerte_wind_00701_akt.zip
+historical:      https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/10_minutes/wind/historical/10minutenwerte_ff_00701_19971119_19991231_hist.zip
+                 https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/10_minutes/wind/historical/10minutenwerte_ff_00701_20000101_20091231_hist.zip
+                 https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/10_minutes/wind/historical/10minutenwerte_ff_00701_20100101_20181231_hist.zip
+
+daily: all
+2019             https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/recent/tageswerte_KL_00701_akt.zip
+hist_1949-2018   https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/historical/tageswerte_KL_00701_19490101_20181231_hist.zip
+
+
