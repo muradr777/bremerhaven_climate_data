@@ -14,7 +14,7 @@ echo '
 
 		<section class="d_table"> '
 		
-			./table.sh "TitleTest"
+			./table.sh "Temperatur" 0
 			
 echo '	</section>
 	</main>
