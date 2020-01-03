@@ -3,7 +3,7 @@
 
 while read link title resst; do
   echo "$title"
-done < < cat "data/categories.dat" 
+done <<< $(cat "data/categories.dat")
 
 echo '<h2 class="table-title">'
 echo " Tabelle"
