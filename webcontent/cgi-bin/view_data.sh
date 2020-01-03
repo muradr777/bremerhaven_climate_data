@@ -13,7 +13,9 @@ IFS=$SAVE_IFS
 
 i=0
 while read c_link c_title c_icon; do
-	echo "$c_title $i 11"
+	if [ $i = $cat_id ]; then
+		cat_title="$c_title"
+	fi
 	((i+=1))
 done <<< $(cat data/categories.dat)
 
@@ -27,7 +29,7 @@ echo '
 
 		<section class="d_table"> '
 		
-			./table.sh "Temperatur" $cat_id
+			./table.sh "$cat_id" "$cat_title"
 			
 echo '	</section>
 	</main>

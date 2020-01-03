@@ -1,5 +1,5 @@
-title=$1
-data_id=$2
+data_id=$1
+data_title=$2
 
 echo '<h2 class="table-title">'
 echo "$title Tabelle"
