@@ -2,7 +2,7 @@ IFS="&="
 set -- $QUERY_STRING
 while read line; do
   echo "$line"
-done < "cat data/categories.dat"
+done < "data/categories.dat"
 
 
 echo '<h2 class="table-title">'
