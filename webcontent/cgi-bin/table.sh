@@ -3,12 +3,14 @@
 i=0
 # Getting title from page_id($2)
 while read link title resst; do
-  echo "$i $title"
+  if [ $2 = $i ]; then
+    ptitle="$title"
+  fi
   ((i+=1))
 done <<< $(cat "data/categories.dat")
 
 echo '<h2 class="table-title">'
-echo " Tabelle"
+echo "$ptitle Tabelle"
 echo '</h2>'
 
 echo '
