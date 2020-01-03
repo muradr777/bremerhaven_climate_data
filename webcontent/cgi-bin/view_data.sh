@@ -15,7 +15,7 @@ i=0
 while read c_link c_title c_icon; do
 	echo "$c_title $i 11"
 	((i+=1))
-done <<< data/categories.dat
+done <<< $(cat data/categories.dat)
 
 echo '
 	<main class="wrapper container-fluid">
