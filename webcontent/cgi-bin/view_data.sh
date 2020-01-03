@@ -4,9 +4,11 @@ echo ""
 
 ./header.sh
 
+SAVE_IFS=$IFS
 IFS='=&'
 set -- $QUERY_STRING
 cat_id=$2
+IFS=$SAVE_IFS
 
 cat data/categories.dat | while read c_link c_title c_icon; do
 	echo "$c_title <br/>"
