@@ -6,9 +6,12 @@ p_title=""
 while read link title resst; do
   if [ $2 = $i ]; then
     $p_title = $title
+    echo "$2 $i asdasdas"
   fi
   ((i+=1))
 done <<< $(cat "data/categories.dat")
+
+echo "$2 $ptitle 12312312"
 
 echo '<h2 class="table-title">'
 echo "$p_title Tabelle"
