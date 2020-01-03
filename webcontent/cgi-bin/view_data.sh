@@ -9,7 +9,7 @@ IFS='=&'
 parm=($QUERY_STRING)
 IFS=$saveIFS
 
-printf parm[@]
+printf $parm[@]
 
 echo '
 	<main class="wrapper container-fluid">
