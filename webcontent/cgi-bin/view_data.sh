@@ -16,6 +16,7 @@ cat_title=""
 while read c_link c_title c_icon; do
 	echo "catid= $cat_id i= $i c_title= $c_title <br>"
 	if [ $i = $cat_id ]; then
+		echo "YEEAAAH"
 		cat_title="$c_title"
 	fi
 	((i+=1))
