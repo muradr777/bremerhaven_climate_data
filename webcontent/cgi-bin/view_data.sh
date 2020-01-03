@@ -28,6 +28,8 @@ done <<< $(cat data/categories.dat)
 # 	exit 1
 # fi
 
+echo "$arr[@]"
+
 echo '
 	<main class="wrapper container-fluid">
 '
@@ -39,7 +41,7 @@ echo '
 
 		<section class="d_table"> '
 		
-			./table.sh "${arr[@]}"
+			./table.sh "$arr[@]"
 			
 echo '	</section>
 	</main>
