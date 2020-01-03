@@ -20,6 +20,14 @@ while read c_link c_title c_icon; do
 	((i+=1))
 done <<< $(cat data/categories.dat)
 
+if [ $cat_title = "" ]; then 
+	echo "<div class="alert alert-danger" role="alert">"
+	echo "		<b>Error:</b> Kategorie nicht gefunden. <a href="index.sh" class="alert-link">Link nach Hauptseite</a>"
+	echo "</div>"
+
+	exit 1
+fi
+
 echo '
 	<main class="wrapper container-fluid">
 '
