@@ -1,8 +1,9 @@
 # IFS="&="
 # set -- $QUERY_STRING
-
+i=0
 while read link title resst; do
-  echo "$title"
+  echo "$i $title"
+  ((i+=1))
 done <<< $(cat "data/categories.dat")
 
 echo '<h2 class="table-title">'
