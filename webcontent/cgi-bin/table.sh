@@ -1,11 +1,9 @@
 IFS="&="
 set -- $QUERY_STRING
-echo $1
-echo $2
-echo $3
+title=$2
 
 echo '<h2 class="table-title">'
-echo ""
+echo "  $title"
 echo '</h2>'
 
 echo '
