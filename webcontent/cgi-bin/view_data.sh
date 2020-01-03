@@ -7,7 +7,8 @@ echo ""
 SAVE_IFS=$IFS
 IFS='=&'
 set -- $QUERY_STRING
-cat_id=$(($2 + 0)) 
+tmp_id=$2
+cat_id=$((tmp_id + 0)) 
 IFS=$SAVE_IFS
 
 i=0
