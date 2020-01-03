@@ -6,7 +6,7 @@ echo ""
 
 IFS="&="
 parm=($QUERY_STRING)
-echo $parm[1]
+echo $parm
 
 echo '
 	<main class="wrapper container-fluid">
