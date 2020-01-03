@@ -22,8 +22,9 @@ done <<< $(cat data/categories.dat)
 
 echo '
 	<main class="wrapper container-fluid">
-		<h1>${cat_title}daten Presentation</h1>
-		
+'
+echo "		<h1>${cat_title}daten Presentation</h1>"		
+echo '		
 		<section class="d_diagramm">
 			<img width="100%" src="../img/plot_test.svg" alt="Plot test" />
 		</section>
