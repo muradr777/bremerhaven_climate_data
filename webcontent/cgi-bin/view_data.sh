@@ -4,9 +4,12 @@ echo ""
 
 ./header.sh
 
-IFS="&="
+saveIFS=$IFS
+IFS='=&'
 parm=($QUERY_STRING)
-echo $QUERY_STRING
+IFS=$saveIFS
+
+printf parm[@]
 
 echo '
 	<main class="wrapper container-fluid">
