@@ -2,7 +2,7 @@ data_id=$1
 data_title=$2
 
 echo '<h2 class="table-title">'
-echo "$title Tabelle"
+echo "$data_title Tabelle"
 echo '</h2>'
 
 echo '

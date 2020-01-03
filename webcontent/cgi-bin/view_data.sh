@@ -32,7 +32,7 @@ echo '
 
 		<section class="d_table"> '
 		
-			./table.sh "$cat_id" "1111"
+			./table.sh "$cat_id" "$cat_title"
 			
 echo '	</section>
 	</main>
