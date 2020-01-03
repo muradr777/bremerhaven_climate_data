@@ -8,11 +8,14 @@ SAVE_IFS=$IFS
 IFS='=&'
 set -- $QUERY_STRING
 cat_id=$2
+cat_title=""
 IFS=$SAVE_IFS
 
-cat data/categories.dat | while read c_link c_title c_icon; do
-	echo "$c_title <br/>"
-done
+i=0
+while read c_link c_title c_icon; do
+	echo "$c_title $i 11"
+	((i+=1))
+done <<< data/categories.dat
 
 echo '
 	<main class="wrapper container-fluid">
