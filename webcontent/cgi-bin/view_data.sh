@@ -8,8 +8,8 @@ IFS='=&'
 set -- $QUERY_STRING
 cat_id=$2
 
-cat data/categories.sh | while read link title rest; do
-	echo "$title <br/>"
+cat data/categories.dat | while read c_link c_title c_icon; do
+	echo "$c_title <br/>"
 done
 
 echo '
