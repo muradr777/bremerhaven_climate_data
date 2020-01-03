@@ -1,12 +1,12 @@
 IFS="&="
 set -- $QUERY_STRING
-while read line; do
-  echo "$line"
+while read link title resst; do
+  echo "$title\n"
 done < "data/categories.dat"
 
 
 echo '<h2 class="table-title">'
-echo "  $title Tabelle"
+echo " Tabelle"
 echo '</h2>'
 
 echo '
