@@ -1,8 +1,9 @@
 # IFS="&="
 # set -- $QUERY_STRING
-cat "data/categories.dat" | while read link title resst; do
-  echo "$title\n"
-done
+
+while read link title resst; do
+  echo "$title"
+done < < cat "data/categories.dat" 
 
 echo '<h2 class="table-title">'
 echo " Tabelle"
