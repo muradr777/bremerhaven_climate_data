@@ -4,12 +4,13 @@ echo ""
 
 ./header.sh
 
-saveIFS=$IFS
 IFS='=&'
-parm=($QUERY_STRING)
-IFS=$saveIFS
+set -- $QUERY_STRING
+cat_id=$2
 
-printf $parm[@]
+cat "data/categories.sh" | while read link title rest; do
+	echo "$title <br/>"
+done
 
 echo '
 	<main class="wrapper container-fluid">
@@ -21,7 +22,7 @@ echo '
 
 		<section class="d_table"> '
 		
-			./table.sh "Temperatur" 0
+			./table.sh "Temperatur" $cat_id
 			
 echo '	</section>
 	</main>
