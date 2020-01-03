@@ -4,6 +4,10 @@ echo ""
 
 ./header.sh
 
+IFS="&="
+parm=($QUERY_STRING)
+echo $parm[1]
+
 echo '
 	<main class="wrapper container-fluid">
 		<h1>Data Presentation</h1>
@@ -14,7 +18,7 @@ echo '
 
 		<section class="d_table"> '
 		
-			./table.sh "TitleTest"
+			./table.sh "Temperatur" 0
 			
 echo '	</section>
 	</main>
