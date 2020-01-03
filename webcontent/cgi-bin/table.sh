@@ -1,10 +1,13 @@
-echo "$QUERY_STRING"
+IFS="&"
+set -- $QUERY_STRING
+echo $1
+echo $2
+
+echo '<h2 class="table-title">'
+echo ""
+echo '</h2>'
 
 echo '
-
-<h2 class="table-title">
-	Table Test
-</h2>
 <table class="table table-hover border border-light">
   <thead>
     <tr class="bg-dark text-warning">
