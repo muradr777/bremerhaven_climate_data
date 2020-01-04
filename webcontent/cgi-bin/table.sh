@@ -12,21 +12,26 @@ data_count="${data[2]}"
 
 source_path=$(./download_data.sh $data_count)
 
-echo '<h2 class="table-title">'
-echo "$cat_title Tabelle"
-echo '</h2>'
+echo '<div class="row justify-content-between">'
+echo '  <div class="col-12 col-sm-4">'
+echo '    <h2 class="table-title">'
+echo "      $cat_title Tabelle"
+echo '    </h2>'
+echo '  </div>'
+echo '  <div class="col-12 col-sm-4">'
+echo '    <div class="btn-group" role="group" aria-label="Data Range">'
+          while read line; do
+            echo "  <button type=\"button\" class=\"btn btn-dark text-warning\">$line</button>"
+          done <<< $(cat data/data_range.dat)
+echo '    </div>'
+echo '  </div>'
+echo '</div>'
 
 rainform_col=2 # to convert form id in text
 
 fileinfo=( $(./get_filename_by_cat_id.sh "$cat_id") )
 filename=${fileinfo[0]}
 filecols=${fileinfo[1]}
-
-echo '<div class="btn-group" role="group" aria-label="Data Range">'
-while read line; do
-  echo "<button type=\"button\" class=\"btn btn-dark text-warning\">$line</button>"
-done <<< $(cat data/data_range.dat)
-echo '</div>'
 
 echo '
 <table class="table table-hover border border-light">
