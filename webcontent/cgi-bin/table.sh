@@ -11,6 +11,9 @@ echo '<h2 class="table-title">'
 echo "${data[1]} Tabelle"
 echo '</h2>'
 
+fileinfo=(./get_filename_by_cat_id.sh "${data[0]}")
+filename=${fileinfo[0]}
+filecols=${fileinfo[1]}
 
 echo '
 <table class="table table-hover border border-light">
@@ -19,7 +22,7 @@ echo '
 
     while read line; do
       echo "<th scope=\"col\">$line</th>"
-    done <<< $(cat data/temp_cols.dat)
+    done <<< $(cat "data/${filecols}")
 
 echo '
     </tr>
@@ -27,9 +30,7 @@ echo '
   <tbody>
 '
   i=1
-  filename=$(./get_filename_by_cat_id.sh "${data[0]}")
 
-  echo "/tmp/_723457_dwd_data/${filename}"
 
   while read line; do
   echo '<tr>'
