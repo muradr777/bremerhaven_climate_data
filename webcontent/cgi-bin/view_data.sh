@@ -20,18 +20,18 @@ while read c_link c_title c_icon; do
 	((i+=1))
 done <<< $(cat data/categories.dat)
 
-# if [ ${#arr[0]} = 0 ]; then
-# 	echo '<div class="alert alert-danger" role="alert">'
-# 	echo "		<b>Error:</b> Kategorie nicht gefunden. <a href="index.sh" class="alert-link">Link nach Hauptseite</a>"
-# 	echo "</div>"
+if [ ${#arr[1]} = 0 ]; then
+	echo '<div class="alert alert-danger" role="alert">'
+	echo "		<b>Error:</b> Kategorie nicht gefunden. <a href="index.sh" class="alert-link">Link nach Hauptseite</a>"
+	echo "</div>"
 
-# 	exit 1
-# fi
+	exit 1
+fi
 
 echo '
 	<main class="wrapper container-fluid">
 '
-echo "		<h1>${cat_title}daten Presentation</h1>"		
+echo "		<h1>${arr[1]}daten Presentation</h1>"		
 echo '		
 		<section class="d_diagramm">
 			<img width="100%" src="../img/plot_test.svg" alt="Plot test" />
