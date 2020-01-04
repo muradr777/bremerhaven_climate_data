@@ -1,11 +1,11 @@
 data=()
 
 for dat in "$@"; do
-  echo "$dat <br>"
+  data+=( $dat )
 done
 
 echo '<h2 class="table-title">'
-echo "$data_title Tabelle"
+echo "$data[1] Tabelle"
 echo '</h2>'
 
 echo '
