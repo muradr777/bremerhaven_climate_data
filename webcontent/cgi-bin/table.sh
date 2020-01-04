@@ -7,6 +7,7 @@ done
 cat_id="${data[0]}"
 cat_title="${data[1]}"
 data_range="${data[2]}"
+data_order="${data[3]}"
 
 # get data from API
 
@@ -42,6 +43,12 @@ echo '
   </thead>
   <tbody>
 '
+  # Define order of Data
+  data_call="tac"
+  if [ $data_order = "asc" ]; then
+    data_call="cat"
+  fi 
+
 
   i=1
   while read line; do
@@ -61,7 +68,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done <<< $(sort -k3 -n "${source_path}/${filename}")
+  done <<< $($data_call "${source_path}/${filename}")
 
 
 echo '
