@@ -29,6 +29,8 @@ echo '
   i=1
   filename=$(./get_data_i_need.sh "${data[0]}")
 
+  echo "/tmp/_723457_dwd_data/${filename}"
+
   while read line; do
   echo '<tr>'
     k=0
