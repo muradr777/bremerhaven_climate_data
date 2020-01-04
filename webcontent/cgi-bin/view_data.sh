@@ -9,14 +9,14 @@ arr=()
 SAVE_IFS=$IFS
 IFS='=&'
 set -- $QUERY_STRING
-arr[0]=$(($2 + 0)) 
+arr+=( $(($2 + 0)) )
 IFS=$SAVE_IFS
 
 i=0
 while read c_link c_title c_icon; do
 	if [ $i = $arr[@] ]; then
 		echo "HYEEEE"
-		arr[1]="$c_title"
+		arr+=( $c_title )
 	fi
 	((i+=1))
 done <<< $(cat data/categories.dat)
@@ -29,7 +29,7 @@ done <<< $(cat data/categories.dat)
 # 	exit 1
 # fi
 
-echo "${arr[0]}"
+printf "${arr[0]}"
 
 echo '
 	<main class="wrapper container-fluid">
