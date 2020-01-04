@@ -28,10 +28,10 @@ if [ ! ${#4} = 0 ]; then
 	arr+=( $data_count )
 fi
 
-data_order="desc"
+data_order=0
 if [ ! ${#6} = 0 ]; then
-	if [ $6 = 1 ]; then
-		data_order="asc"
+	if [ $6 = "asc" ]; then
+		data_order=1
 	fi
 	arr+=( $data_order )
 fi
