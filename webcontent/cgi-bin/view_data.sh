@@ -12,11 +12,9 @@ set -- $QUERY_STRING
 arr+=( $(($2 + 0)) )
 IFS=$SAVE_IFS
 
-echo $arr[0]
-
 i=0
 while read c_link c_title c_icon; do
-	if [ $i = $arr[0] ]; then
+	if [ $i = ${arr[0]} ]; then
 		echo "HYEEEE"
 		arr+=( $c_title )
 	fi
