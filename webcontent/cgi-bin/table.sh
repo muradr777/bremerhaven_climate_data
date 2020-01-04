@@ -22,6 +22,12 @@ fileinfo=( $(./get_filename_by_cat_id.sh "$cat_id") )
 filename=${fileinfo[0]}
 filecols=${fileinfo[1]}
 
+echo '<div class="btn-group" role="group" aria-label="Data Range">'
+while read line; do
+  echo "<button type=\"button\" class=\"btn btn-dark text-warning\">$line</button>"
+done <<< $(cat data/data_range.dat)
+echo '</div>'
+
 echo '
 <table class="table table-hover border border-light">
   <thead>
