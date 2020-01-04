@@ -41,7 +41,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done <<< "/tmp/${USER}_$$_dwd_data/temp.dat"
+  done <<< $(cat "/tmp/${USER}_$$_dwd_data/temp.dat")
 
 
 echo '
