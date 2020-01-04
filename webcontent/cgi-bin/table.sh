@@ -27,7 +27,7 @@ echo '
   <tbody>
 '
   i=1
-  filename=$(./get_data_i_need.sh "${data[0]}")
+  filename=$(./get_filename_by_cat_id.sh "${data[0]}")
 
   echo "/tmp/_723457_dwd_data/${filename}"
 
