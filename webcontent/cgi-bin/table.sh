@@ -29,9 +29,8 @@ echo '
   </thead>
   <tbody>
 '
+
   i=1
-
-
   while read line; do
   echo '<tr>'
     k=0

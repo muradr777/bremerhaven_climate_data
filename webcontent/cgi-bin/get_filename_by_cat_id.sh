@@ -6,7 +6,7 @@ case $cat_id in
 		key="temp"
 		;;
 	1)	
-		key="rain_form"
+		key="rain_height"
 		;;
 	2)
 		key="wind"
@@ -16,7 +16,7 @@ case $cat_id in
 		;;
 esac
 
-arr[0]="${key}.dat" #filename
-arr[1]="${key}_cols.dat" #cols
+arr[0]="${key}.dat" # filename
+arr[1]="${key}_cols.dat" # cols
 
 echo "${arr[@]}"
