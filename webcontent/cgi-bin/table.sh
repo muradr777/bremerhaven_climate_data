@@ -5,7 +5,7 @@ for dat in "$@"; do
 done
 
 echo '<h2 class="table-title">'
-echo "$data[1] Tabelle"
+echo "${data[1]} Tabelle"
 echo '</h2>'
 
 echo '
