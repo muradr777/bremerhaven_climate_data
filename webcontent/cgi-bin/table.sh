@@ -41,7 +41,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done <<< "$(cat $source_path)"
+  done <<< $(cat $source_path)
 
 
 echo '
