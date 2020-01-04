@@ -36,7 +36,7 @@ echo '
     k=0
     for val in $line; do
       if [ $k = 0 ]; then
-        echo "<th scope=\"row\">$val</th>"
+        echo "<th scope=\"row\">$k</th>"
       else
         echo "<td>$val</td>"
       fi
