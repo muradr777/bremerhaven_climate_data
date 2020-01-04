@@ -14,7 +14,7 @@ IFS=$SAVE_IFS
 
 i=0
 while read c_link c_title c_icon; do
-	if [ $i = $arr[0] ]; then
+	if [ $i = $arr[@] ]; then
 		echo "HYEEEE"
 		arr[1]="$c_title"
 	fi
@@ -29,7 +29,7 @@ done <<< $(cat data/categories.dat)
 # 	exit 1
 # fi
 
-echo "$arr[@]"
+echo "${arr[0]}"
 
 echo '
 	<main class="wrapper container-fluid">
