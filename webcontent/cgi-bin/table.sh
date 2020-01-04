@@ -17,7 +17,7 @@ fileinfo=( $(./get_filename_by_cat_id.sh "${data[0]}") )
 filename=${fileinfo[0]}
 filecols=${fileinfo[1]}
 
-./get_rain_form.sh "0"
+./get_rain_form1.sh "0"
 
 echo '
 <table class="table table-hover border border-light">

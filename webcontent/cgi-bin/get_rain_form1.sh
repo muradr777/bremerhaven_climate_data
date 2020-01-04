@@ -16,3 +16,5 @@ case $type in
 		echo "Regen und Schnee (und/oder Schneeregen)"
 		;;
 esac
+
+
