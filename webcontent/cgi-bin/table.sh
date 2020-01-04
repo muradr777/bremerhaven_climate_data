@@ -18,10 +18,10 @@ echo '    <h2 class="table-title">'
 echo "      $cat_title Tabelle"
 echo '    </h2>'
 echo '  </div>'
-echo '  <div class="col-12 col-sm-4">'
+echo '  <div class="col-12 col-sm-4 text-right">'
 echo '    <div class="btn-group" role="group" aria-label="Data Range">'
           while read line; do
-            echo "  <button type=\"button\" class=\"btn btn-dark text-warning\">$line</button>"
+            echo "  <button type=\"button\" class=\"btn btn-light text-dark\">$line</button>"
           done <<< $(cat data/data_range.dat)
 echo '    </div>'
 echo '  </div>'
