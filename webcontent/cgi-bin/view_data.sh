@@ -15,7 +15,6 @@ IFS=$SAVE_IFS
 i=0
 while read c_link c_title c_icon; do
 	if [ $i = ${arr[0]} ]; then
-		echo "HYEEEE"
 		arr+=( $c_title )
 	fi
 	((i+=1))

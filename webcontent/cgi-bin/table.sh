@@ -1,4 +1,4 @@
-printf $1
+printf $2
 
 
 echo '<h2 class="table-title">'
