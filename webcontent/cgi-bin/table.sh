@@ -41,7 +41,7 @@ echo '
     k=0
     for val in $line; do
       if [ $k = 0 ]; then
-        echo "<th scope=\"row\">$i 1</th>"
+        echo "<th scope=\"row\">$i</th>"
       fi
 
       if [ $k = $rainform_col ]; then
