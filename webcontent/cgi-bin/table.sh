@@ -5,9 +5,7 @@ for dat in "$@"; do
 done
 
 # get data from API
-echo "<div class=\"hidden\">" 
-  ./download_data.sh 30
-echo "</div>"
+./download_data.sh 30 > /dev/null
 
 echo '<h2 class="table-title">'
 echo "${data[1]} Tabelle"
@@ -42,7 +40,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done <<< $(cat /tmp/${USER}_$$_dwd_data/temp.dat)
+  done <<< $(cat /tmp/$USER_$$_dwd_data/temp.dat)
 
 
 echo '
