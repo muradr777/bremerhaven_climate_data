@@ -6,26 +6,21 @@ done
 
 cat_id="${data[0]}"
 cat_title="${data[1]}"
-data_count="${data[2]}"
+data_range="${data[2]}"
 
 # get data from API
 
-source_path=$(./download_data.sh $data_count)
+source_path=$(./download_data.sh $data_range)
 
-echo '<div class="row justify-content-between">'
-echo '  <div class="col-12 col-sm-4">'
+
 echo '    <h2 class="table-title">'
 echo "      $cat_title Tabelle"
 echo '    </h2>'
-echo '  </div>'
-echo '  <div class="col-12 col-sm-4 text-right">'
 echo '    <div class="btn-group" role="group" aria-label="Data Range">'
-          while read line; do
-            echo "  <button type=\"button\" class=\"btn btn-light text-dark\">$line</button>"
+          while read title count; do
+            echo "  <a href=\"view_data.sh?cat_id=${cat_id}&range=${data_range}\" class=\"btn btn-light text-dark\">$line</a>"
           done <<< $(cat data/data_range.dat)
 echo '    </div>'
-echo '  </div>'
-echo '</div>'
 
 rainform_col=2 # to convert form id in text
 
