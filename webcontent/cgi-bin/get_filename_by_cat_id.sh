@@ -17,10 +17,10 @@ case $cat_id in
 		;;
 esac
 
-newfilepath="data/tmp_${filename}"
+# newfilepath="data/tmp_${filename}"
 
-cat $(echo "${path}/${filename}") | while read line; do
-	echo $line >> $newfilepath
-done
+# cat $(echo "${path}/${filename}") | while read line; do
+# 	echo $line >> $newfilepath
+# done
 
-echo $newfilepath
+echo $filename
