@@ -8,6 +8,7 @@ cat_id="${data[0]}"
 cat_title="${data[1]}"
 
 # get data from API
+
 source_path=$(./download_data.sh 30)
 
 echo '<h2 class="table-title">'

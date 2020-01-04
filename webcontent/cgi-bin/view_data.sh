@@ -21,8 +21,9 @@ while read c_link c_title c_icon; do
 done <<< $(cat data/categories.dat)
 
 
-echo $4
-echo "asdasdasasdsa"
+if [ ! ${#4} = 0 ]; then
+	echo "$4 asdasdsadasd"
+fi
 
 if [ ${#arr[1]} = 0 ]; then
 	echo '<div class="alert alert-danger" role="alert">'
