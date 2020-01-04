@@ -61,7 +61,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done <<< $(cat "${source_path}/${filename}")
+  done <<< $(tail -r "${source_path}/${filename}")
 
 
 echo '
