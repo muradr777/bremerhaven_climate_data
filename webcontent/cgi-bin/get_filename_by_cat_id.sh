@@ -6,7 +6,7 @@ case $cat_id in
 		key="temp"
 		;;
 	1)	
-		key="rain_height"
+		key="rain_form"
 		;;
 	2)
 		key="wind"
