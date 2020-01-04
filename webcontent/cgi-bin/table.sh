@@ -27,6 +27,7 @@ echo '
   <tbody>
 '
   i=1
+  echo "$(cat /tmp/${USER}_$$_dwd_data/temp.dat)"
   while read line; do
   echo '<tr>'
     k=0
@@ -40,7 +41,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done <<< $(cat /tmp/$USER_$$_dwd_data/temp.dat)
+  done <<< "$(cat /tmp/${USER}_$$_dwd_data/temp.dat)"
 
 
 echo '
