@@ -5,7 +5,7 @@ for dat in "$@"; do
 done
 
 # get data from API
-# ./download_data.sh 30 > /dev/null
+source_path=$(./download_data.sh 30)
 
 echo '<h2 class="table-title">'
 echo "${data[1]} Tabelle"
@@ -30,6 +30,7 @@ echo '
   <tbody>
 '
 
+  echo $source_path
   i=1
   while read line; do
   echo '<tr>'
@@ -43,7 +44,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done <<< $(cat "/tmp/_723457_dwd_data/${filename}")
+  done <<< $(cat "$source_path")
 
 
 echo '
