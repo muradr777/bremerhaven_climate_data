@@ -15,16 +15,16 @@ source_path=$(./download_data.sh $data_range)
 
 
 echo '    <h2 class="table-title">'
-echo "      $cat_title Tabelle"
+echo "      $cat_title Tabelle $data_order"
 echo '    </h2>'
 
-echo '    <div class="btn-group border border-secondary mb-3 mr-2" role="group" aria-label="Data Range">'
+echo '    <div class="btn-group mb-3 mr-2" role="group" aria-label="Data Range">'
           while read title count; do
             echo "  <a href=\"view_data.sh?cat_id=${cat_id}&range=${count}&order=${data_order}\" class=\"btn btn-light text-dark\">$title</a>"
           done <<< $(cat data/data_range.dat)
 echo '    </div>'
 
-echo '    <div class="btn-group border border-secondary mb-3 mr-2" role="group" aria-label="Data Order">'
+echo '    <div class="btn-group mb-3 mr-2" role="group" aria-label="Data Order">'
           while read id title; do
             echo "  <a href=\"view_data.sh?cat_id=${cat_id}&range=${data_range}&order=${id}\" class=\"btn btn-light text-dark\">$title</a>"
           done <<< $(cat data/order_types.dat)
