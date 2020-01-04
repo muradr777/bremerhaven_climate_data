@@ -27,7 +27,7 @@ echo '
   <tbody>
 '
   i=1
-  echo "/tmp/${USER}_$$_dwd_data/temp.dat"
+  source_path="/tmp/${USER}_$$_dwd_data/temp.dat"
   while read line; do
   echo '<tr>'
     k=0
@@ -41,7 +41,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done <<< "$(cat /tmp/${USER}_$$_dwd_data/temp.dat)"
+  done <<< $(cat $source_path)"
 
 
 echo '
