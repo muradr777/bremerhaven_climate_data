@@ -36,7 +36,7 @@ echo '
     k=0
     for val in $line; do
       if [ $k = 0 ]; then
-        echo "<th scope=\"row\">$k</th>"
+        echo "<th scope=\"row\">$i</th>"
       fi
       echo "<td>$val</td>"
       ((k+=1))
