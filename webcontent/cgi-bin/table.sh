@@ -21,40 +21,25 @@ echo '
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+'
+  i=1
+  while read line; do
+  echo '<tr>'
+    k=0
+    for val in $line; do
+      if [ k = 0 ]; then
+        echo "<th scope=\"row\">$val</th>"
+      else
+        echo "<td>$val</td>"
+      fi
+      ((k+=1))
+    done
+  echo '</tr>'
+  ((i+=1))
+  done
+
+
+echo '
   </tbody>
 </table>
 
