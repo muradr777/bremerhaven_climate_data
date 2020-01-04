@@ -1,19 +1,22 @@
 cat_id=$1
-filename=""
+arr=()
 
 case $cat_id in 
 	0)
-		filename="temp.dat"
+		key="temp"
 		;;
 	1)	
-		filename="rain_form.dat"
+		key="rain_form"
 		;;
 	2)
-		filename="wind.dat"
+		key="wind"
 		;;
 	*)
-		filename=""
+		key=""
 		;;
 esac
 
-echo $filename
+arr[0]="${key}.dat" #filename
+arr[1]="${key}_cols.dat" #cols
+
+echo "${arr[@]}"
