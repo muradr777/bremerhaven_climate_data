@@ -61,7 +61,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done <<< $(tac "${source_path}/${filename}")
+  done <<< $(sort -k3 -n "${source_path}/${filename}")
 
 
 echo '
