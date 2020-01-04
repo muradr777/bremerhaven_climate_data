@@ -16,9 +16,9 @@ source_path=$(./download_data.sh $data_range)
 echo '    <h2 class="table-title">'
 echo "      $cat_title Tabelle"
 echo '    </h2>'
-echo '    <div class="btn-group" role="group" aria-label="Data Range">'
+echo '    <div class="btn-group mb-3" role="group" aria-label="Data Range">'
           while read title count; do
-            echo "  <a href=\"view_data.sh?cat_id=${cat_id}&range=${data_range}\" class=\"btn btn-light text-dark\">$title</a>"
+            echo "  <a href=\"view_data.sh?cat_id=${cat_id}&range=${count}\" class=\"btn btn-light text-dark\">$title</a>"
           done <<< $(cat data/data_range.dat)
 echo '    </div>'
 
