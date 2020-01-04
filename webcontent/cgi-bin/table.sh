@@ -18,7 +18,7 @@ echo "      $cat_title Tabelle"
 echo '    </h2>'
 echo '    <div class="btn-group" role="group" aria-label="Data Range">'
           while read title count; do
-            echo "  <a href=\"view_data.sh?cat_id=${cat_id}&range=${data_range}\" class=\"btn btn-light text-dark\">$line</a>"
+            echo "  <a href=\"view_data.sh?cat_id=${cat_id}&range=${data_range}\" class=\"btn btn-light text-dark\">$title</a>"
           done <<< $(cat data/data_range.dat)
 echo '    </div>'
 
