@@ -35,7 +35,7 @@ echo '
   echo '<tr>'
     k=0
     for val in $line; do
-      if [ k = 0 ]; then
+      if [ $k = 0 ]; then
         echo "<th scope=\"row\">$val</th>"
       else
         echo "<td>$val</td>"
