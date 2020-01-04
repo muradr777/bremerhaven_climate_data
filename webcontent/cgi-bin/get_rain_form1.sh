@@ -1,7 +1,5 @@
 type=$(($1 + 0))
 
-echo $type
-
 case $type in 
 	0)
 		echo "Kein Niederschlag (oder kein Wert)"
