@@ -97,6 +97,8 @@ main.wrapper {
 }
 
 .d_table {
+	width: 100%;
+	overflow: auto;
 	padding: 30px 15px;	
 	border-top: 1px solid #ddd;
 }
