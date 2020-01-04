@@ -4,16 +4,19 @@ for dat in "$@"; do
   data+=( $dat )
 done
 
+cat_id="${data[0]}"
+cat_title="${data[1]}"
+
 # get data from API
 source_path=$(./download_data.sh 30)
 
 echo '<h2 class="table-title">'
-echo "${data[1]} Tabelle"
+echo "$cat_title Tabelle"
 echo '</h2>'
 
 rainform_col=2 # to convert form id in text
 
-fileinfo=( $(./get_filename_by_cat_id.sh "${data[0]}") )
+fileinfo=( $(./get_filename_by_cat_id.sh "$cat_id") )
 filename=${fileinfo[0]}
 filecols=${fileinfo[1]}
 
