@@ -8,6 +8,8 @@ echo '<h2 class="table-title">'
 echo "${data[1]} Tabelle"
 echo '</h2>'
 
+echo "/tmp/${USER}_$$_dwd_data/temp.dat"
+
 echo '
 <table class="table table-hover border border-light">
   <thead>
@@ -36,7 +38,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done
+  done <<< "/tmp/${USER}_$$_dwd_data/temp.dat"
 
 
 echo '
