@@ -15,7 +15,7 @@ echo '
 
     while read line; do
       echo "<th scope=\"col\">$line</th>"
-    done
+    done <<< $(cat data/temp_cols.dat)
 
 echo '
     </tr>
