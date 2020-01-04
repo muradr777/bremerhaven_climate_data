@@ -6,10 +6,11 @@ done
 
 cat_id="${data[0]}"
 cat_title="${data[1]}"
+data_count="${data[2]}"
 
 # get data from API
 
-source_path=$(./download_data.sh 30)
+source_path=$(./download_data.sh $data_count)
 
 echo '<h2 class="table-title">'
 echo "$cat_title Tabelle"

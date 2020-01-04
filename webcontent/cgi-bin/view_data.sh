@@ -9,7 +9,8 @@ arr=()
 SAVE_IFS=$IFS
 IFS='=&'
 set -- $QUERY_STRING
-arr+=( $(($2 + 0)) )
+data_id=$(($2 + 0))
+arr+=( $data_id )
 IFS=$SAVE_IFS
 
 i=0
@@ -21,8 +22,10 @@ while read c_link c_title c_icon; do
 done <<< $(cat data/categories.dat)
 
 
+data_count=30
 if [ ! ${#4} = 0 ]; then
-	echo "$4 asdasdsadasd"
+	data_count=$(( $4 + 0 ))
+	arr+=( $data_count )
 fi
 
 if [ ${#arr[1]} = 0 ]; then
