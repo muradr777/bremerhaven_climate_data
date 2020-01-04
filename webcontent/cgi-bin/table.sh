@@ -4,11 +4,14 @@ for dat in "$@"; do
   data+=( $dat )
 done
 
+# get data from API
+./download_data.sh 30
+
 echo '<h2 class="table-title">'
 echo "${data[1]} Tabelle"
 echo '</h2>'
 
-echo $(cat "/tmp/thedockeruser_$$_dwd_data/temp.dat")
+echo "/tmp/${USER}_$$_dwd_data/temp.dat"
 
 echo '
 <table class="table table-hover border border-light">
@@ -38,7 +41,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done <<< $(cat "/tmp/thedockeruser_$$_dwd_data/temp.dat")
+  done <<< "/tmp/${USER}_$$_dwd_data/temp.dat"
 
 
 echo '
