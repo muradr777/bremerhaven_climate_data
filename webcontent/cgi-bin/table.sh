@@ -38,7 +38,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done <<< "/tmp/${USER}_$$_dwd_data/temp.dat"
+  done <<< $(cat "/tmp/thedockeruser_$$_dwd_data/temp.dat")
 
 
 echo '
