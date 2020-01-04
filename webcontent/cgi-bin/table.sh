@@ -11,11 +11,13 @@ echo '</h2>'
 echo '
 <table class="table table-hover border border-light">
   <thead>
-    <tr class="bg-dark text-warning">
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+    <tr class="bg-dark text-warning">'
+
+    while read line; do
+      echo "<th scope=\"col\">$line</th>"
+    done
+
+echo '
     </tr>
   </thead>
   <tbody>
