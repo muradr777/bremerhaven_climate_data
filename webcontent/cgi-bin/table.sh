@@ -27,7 +27,8 @@ echo '
   <tbody>
 '
   i=1
-  source_path="/tmp/${USER}_$$_dwd_data/temp.dat"
+  source_path=$(./get_data_i_need.sh "${data[0]}")
+
   while read line; do
   echo '<tr>'
     k=0
