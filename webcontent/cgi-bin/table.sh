@@ -11,6 +11,8 @@ echo '<h2 class="table-title">'
 echo "${data[1]} Tabelle"
 echo '</h2>'
 
+rainform_col=2 # to convert form id in text
+
 fileinfo=( $(./get_filename_by_cat_id.sh "${data[0]}") )
 filename=${fileinfo[0]}
 filecols=${fileinfo[1]}
@@ -30,7 +32,6 @@ echo '
   <tbody>
 '
 
-  echo $source_path
   i=1
   while read line; do
   echo '<tr>'
@@ -39,6 +40,11 @@ echo '
       if [ $k = 0 ]; then
         echo "<th scope=\"row\">$i</th>"
       fi
+      
+      if [ $k = $rainform_col ]; then
+        val=$(./get_rain_form.sh $val)
+      fi
+
       echo "<td>$val</td>"
       ((k+=1))
     done
