@@ -27,7 +27,7 @@ echo '
   <tbody>
 '
   i=1
-  echo "$(cat /tmp/${USER}_$$_dwd_data/temp.dat)"
+  echo "/tmp/${USER}_$$_dwd_data/temp.dat"
   while read line; do
   echo '<tr>'
     k=0
