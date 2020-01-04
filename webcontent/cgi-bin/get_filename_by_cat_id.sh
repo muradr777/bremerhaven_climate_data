@@ -1,6 +1,5 @@
 cat_id=$1
 filename=""
-path="/tmp/${USER}_$$_dwd_data"
 
 case $cat_id in 
 	0)
