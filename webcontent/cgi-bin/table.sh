@@ -11,7 +11,7 @@ echo '<h2 class="table-title">'
 echo "${data[1]} Tabelle"
 echo '</h2>'
 
-fileinfo=(./get_filename_by_cat_id.sh "${data[0]}")
+fileinfo=( $(./get_filename_by_cat_id.sh "${data[0]}") )
 filename=${fileinfo[0]}
 filecols=${fileinfo[1]}
 
