@@ -1,5 +1,8 @@
-printf $1
+data=()
 
+for dat in "$@"; do
+  echo "$dat <br>"
+done
 
 echo '<h2 class="table-title">'
 echo "$data_title Tabelle"
