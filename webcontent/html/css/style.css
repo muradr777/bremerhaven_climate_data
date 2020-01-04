@@ -103,6 +103,11 @@ main.wrapper {
 	border-top: 1px solid #ddd;
 }
 
+.rain_form_block .fa {
+	margin-right: 5px;
+}
+
+
 
 /* Categories */
 .categories-container {
@@ -275,5 +280,9 @@ footer {
 	}
 	.d_table {
 		font-size: 14px;
+	}
+
+	.rain_form_block > span {
+		display: none;
 	}
 }
