@@ -26,7 +26,8 @@ doit() {
     tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,14 -d ';' | sed 's/ //g; s/;/ /g' > temp.dat
     tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,5 -d ';' | sed 's/ //g; s/;/ /g' > wind.dat
     tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,7 -d ';' | sed 's/ //g; s/;/ /g' > rain_height.dat
-    tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,7,8 -d ';' | sed 's/ //g; s/;/ /g; s/ 4/ 0/g; s/ 6/ 1/g; s/ 7/ 2/g; s/ 8/ 3/g; s/ 9/ 0/g' > rain_form.dat
+    tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,8 -d ';' | sed 's/ //g; s/;/ /g; s/ 4/ 0/g; s/ 6/ 1/g; s/ 7/ 2/g; s/ 8/ 3/g; s/ 9/ 0/g' > rain_form.dat
+    tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,7,8 -d ';' | sed 's/ //g; s/;/ /g; s/ 4/ 0/g; s/ 6/ 1/g; s/ 7/ 2/g; s/ 8/ 3/g; s/ 9/ 0/g' > rain_all.dat
 
     #rm -rf "$path"
   fi
