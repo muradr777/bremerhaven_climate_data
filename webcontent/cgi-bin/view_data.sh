@@ -40,7 +40,7 @@ echo '
 
 		<section class="d_table"> '
 		
-			./table.sh "$arr[@]"
+			./table.sh "${arr[@]}"
 			
 echo '	</section>
 	</main>
