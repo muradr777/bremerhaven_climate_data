@@ -22,7 +22,7 @@ while read c_link c_title c_icon; do
 done <<< $(cat data/categories.dat)
 
 
-data_count=30
+data_count=7
 if [ ! ${#4} = 0 ]; then
 	data_count=$(( $4 + 0 ))
 	arr+=( $data_count )
