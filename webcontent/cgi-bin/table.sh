@@ -27,7 +27,7 @@ echo '
   <tbody>
 '
   i=1
-  source_path=$(./get_data_i_need.sh "${data[0]}")
+  filename=$(./get_data_i_need.sh "${data[0]}")
 
   while read line; do
   echo '<tr>'
@@ -42,7 +42,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done <<< $(cat /tmp/_723457_dwd_data/temp.dat)
+  done <<< $(cat "/tmp/_723457_dwd_data/${filename}")
 
 
 echo '
