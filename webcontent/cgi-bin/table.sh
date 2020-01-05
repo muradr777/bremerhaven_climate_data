@@ -20,13 +20,13 @@ echo '    </h2>'
 
 echo '    <div class="btn-group mb-3 mr-2" role="group" aria-label="Data Range">'
           while read title count; do
-            echo "  <a href=\"view_data.sh?cat_id=${cat_id}&range=${count}&order=${data_order}\" class=\"btn btn-light text-dark\">$title</a>"
+            echo "  <a href=\"view_data.sh?cat_id=${cat_id}&range=${count}&order=${data_order}&sort=${data_sort}\" class=\"btn btn-light text-dark\">$title</a>"
           done <<< $(cat data/data_range.dat)
 echo '    </div>'
 
 echo '    <div class="btn-group mb-3 mr-2" role="group" aria-label="Data Order">'
           while read id key title; do
-            echo "  <a href=\"view_data.sh?cat_id=${cat_id}&range=${data_range}&order=${key}\" class=\"btn btn-light text-dark\">$title</a>"
+            echo "  <a href=\"view_data.sh?cat_id=${cat_id}&range=${data_range}&order=${key}&sort=${data_sort}\" class=\"btn btn-light text-dark\">$title</a>"
           done <<< $(cat data/order_types.dat)
 echo '    </div>'
 
@@ -69,8 +69,13 @@ echo '
     data_call="cat"
   fi 
 
+  # Define sorting query
+  rvrs="-r"
   if [ ! ${#data_sort} = 0 ]; then
-    data_call="sort -k${data_sort} -r -n"
+    if [ $data_order = 1 ]; then
+      rvrs=""
+    fi
+    data_call="sort -k${data_sort} $rvrs -n"
   fi
 
   i=1
