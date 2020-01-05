@@ -91,7 +91,7 @@ echo '
         val=$(./get_rain_form1.sh "$val")
       fi
 
-      val=$(( $val + 0 ))
+      val=$(bc -l <<<"$val")
       echo "<td>$val</td>"
       ((k+=1))
     done
