@@ -47,9 +47,9 @@ echo '
   <thead>
     <tr class="bg-dark text-warning">'
 
-    isort=1
+    isort=0
     while read line; do
-      if [ $isort = 1 ]; then
+      if [ $isort = 0 ]; then
         echo "<th scope=\"col\">$line</th>"
       else
         echo "<th scope=\"col\">$line<a href=\"view_data.sh?cat_id=${cat_id}&range=${data_range}&order=${order_key}&sort=${isort}\" class=\"text-light ml-2\"><i class=\"fa fa-sort\" aria-hidden=\"true\"></i></th>"
@@ -68,6 +68,10 @@ echo '
   if [ $data_order = 1 ]; then
     data_call="cat"
   fi 
+
+  if [ ! ${#data_sort} = 0 ]; then
+    data_call="sort -k${data_sort} -r -n"
+  fi
 
   i=1
   while read line; do

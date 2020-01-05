@@ -36,7 +36,7 @@ if [ ! ${#6} = 0 ]; then
 	arr+=( $data_order )
 fi
 
-data_sort=2
+data_sort=1
 if [ ! ${#8} = 0 ]; then
 	data_order=$(( $8 + 0 ))
 	arr+=( $data_order )
