@@ -13,6 +13,11 @@ data_sort="${data[4]}"
 # get data from API
 source_path=$(./download_data.sh $data_range)
 
+# Define current order key
+order_key="desc"
+if [ $data_order = 1 ]; then
+  order_key="asc"
+fi  
 
 echo '    <h2 class="table-title">'
 echo "      $cat_title Tabelle"
@@ -20,7 +25,7 @@ echo '    </h2>'
 
 echo '    <div class="btn-group mb-3 mr-2" role="group" aria-label="Data Range">'
           while read title count; do
-            echo "  <a href=\"view_data.sh?cat_id=${cat_id}&range=${count}&order=${data_order}&sort=${data_sort}\" class=\"btn btn-light text-dark\">$title</a>"
+            echo "  <a href=\"view_data.sh?cat_id=${cat_id}&range=${count}&order=${order_key}&sort=${data_sort}\" class=\"btn btn-light text-dark\">$title</a>"
           done <<< $(cat data/data_range.dat)
 echo '    </div>'
 
@@ -36,11 +41,6 @@ fileinfo=( $(./get_filename_by_cat_id.sh "$cat_id") )
 filename=${fileinfo[0]}
 filecols=${fileinfo[1]}
 
-# Define current order key
-order_key="desc"
-if [ $data_order = 1 ]; then
-  order_key="asc"
-fi  
 
 echo '
 <table class="table table-hover border border-light">
