@@ -87,7 +87,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done <<< $(sort -k2 -n "${source_path}/${filename}")
+  done <<< $(sort -k1 -r -n "${source_path}/${filename}")
 
 
 echo '
