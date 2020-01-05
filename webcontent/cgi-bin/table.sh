@@ -87,7 +87,7 @@ echo '
         echo "<th scope=\"row\">$i</th>"
       fi
 
-      #val=$(bc -l <<<"$val")
+      val=$(bc -l <<<"$val")
 
       if [ $k = $rainform_col ]; then
         val=$(./get_rain_form1.sh "$val")
