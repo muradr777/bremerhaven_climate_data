@@ -87,12 +87,11 @@ echo '
         echo "<th scope=\"row\">$i</th>"
       fi
 
-      val=$(( $val + 0 ))
-
       if [ $k = $rainform_col ]; then
         val=$(./get_rain_form1.sh "$val")
       fi
 
+      val=$(( $val + 0 ))
       echo "<td>$val</td>"
       ((k+=1))
     done
