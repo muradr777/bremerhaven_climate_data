@@ -10,7 +10,6 @@ data_range="${data[2]}"
 data_order="${data[3]}"
 
 # get data from API
-
 source_path=$(./download_data.sh $data_range)
 
 
@@ -36,13 +35,21 @@ fileinfo=( $(./get_filename_by_cat_id.sh "$cat_id") )
 filename=${fileinfo[0]}
 filecols=${fileinfo[1]}
 
+# Define current order key
+order_key="desc"
+if [ $data_order = 1 ]; then
+  order_key="asc"
+fi  
+
 echo '
 <table class="table table-hover border border-light">
   <thead>
     <tr class="bg-dark text-warning">'
 
+    isort=1
     while read line; do
-      echo "<th scope=\"col\">$line</th>"
+      echo "<th scope=\"col\">$line <a href=\"view_data.sh?cat_id=${cat_id}&range=${data_range}&order=${order_key}&sort=${isort}\"><i class=\"fa fa-sort\" aria-hidden=\"true\"></i></th>"
+      (( isort+=1 ))
     done <<< $(cat "data/${filecols}")
 
 echo '
