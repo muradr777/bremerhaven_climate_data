@@ -52,7 +52,7 @@ echo '
       if [ $isort = 1 ]; then
         echo "<th scope=\"col\">$line</th>"
       else
-        echo "<th scope=\"col\">$line<a href=\"view_data.sh?cat_id=${cat_id}&range=${data_range}&order=${order_key}&sort=${isort}\" class=\"text-light\"><i class=\"fa fa-sort\" aria-hidden=\"true\"></i></th>"
+        echo "<th scope=\"col\">$line<a href=\"view_data.sh?cat_id=${cat_id}&range=${data_range}&order=${order_key}&sort=${isort}\" class=\"text-light ml-2\"><i class=\"fa fa-sort\" aria-hidden=\"true\"></i></th>"
       fi
       
       (( isort+=1 ))
