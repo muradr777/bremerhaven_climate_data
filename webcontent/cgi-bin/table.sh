@@ -91,7 +91,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done <<< $(sort -k1 -r -n "${source_path}/${filename}")
+  done <<< $($data_call "${source_path}/${filename}")
 
 
 echo '
