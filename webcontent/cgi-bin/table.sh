@@ -8,6 +8,7 @@ cat_id="${data[0]}"
 cat_title="${data[1]}"
 data_range="${data[2]}"
 data_order="${data[3]}"
+data_sort="${data[4]}"
 
 # get data from API
 source_path=$(./download_data.sh $data_range)
@@ -48,7 +49,12 @@ echo '
 
     isort=1
     while read line; do
-      echo "<th scope=\"col\">$line <a href=\"view_data.sh?cat_id=${cat_id}&range=${data_range}&order=${order_key}&sort=${isort}\"><i class=\"fa fa-sort\" aria-hidden=\"true\"></i></th>"
+      if [ $isort = 1 ]; then
+        echo "<th scope=\"col\">$line</th>"
+      else
+        echo "<th scope=\"col\">$line<a href=\"view_data.sh?cat_id=${cat_id}&range=${data_range}&order=${order_key}&sort=${isort}\" class=\"text-light\"><i class=\"fa fa-sort\" aria-hidden=\"true\"></i></th>"
+      fi
+      
       (( isort+=1 ))
     done <<< $(cat "data/${filecols}")
 
@@ -62,7 +68,6 @@ echo '
   if [ $data_order = 1 ]; then
     data_call="cat"
   fi 
-
 
   i=1
   while read line; do
@@ -82,7 +87,7 @@ echo '
     done
   echo '</tr>'
   ((i+=1))
-  done <<< $($data_call "${source_path}/${filename}")
+  done <<< $(sort -k2 -n "${source_path}/${filename}")
 
 
 echo '
