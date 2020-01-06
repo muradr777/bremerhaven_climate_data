@@ -9,4 +9,10 @@ if [ "$HOSTNAME" = "docker11257" ]; then
     chgrp www-data $path
     chmod g+w $path
   fi
+elif [ "$HOSTNAME" = "hopper" ]; then
+  if [ "$USER" = "step2019team08" ]; then
+    ssh mydocker "if [ -d "$path" ]; then chgrp www-data $path; chmod g+w $path; else mkdir $path; chgrp www-data $path; chmod g+w $path; fi"
+  else
+    sudo -u step2019team08 ssh mydocker "if [ -d "$path" ]; then chgrp www-data $path; chmod g+w $path; else mkdir $path; chgrp www-data $path; chmod g+w $path; fi"
+  fi
 fi
