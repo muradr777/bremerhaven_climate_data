@@ -78,8 +78,6 @@ echo '	<section class="d_diagramm">'
 echo "		<img width="100%" src="${gplot}" alt="Plot test" />"
 echo '	</section>
 
-		
-
 		<section class="d_table"> '
 		
 			./table.sh "${arr[@]}"
@@ -89,5 +87,7 @@ echo '	</section>
 echo '	</section>
 	</main>
 '
+
+echo "$gdata_path"
 
 ./footer1.sh
