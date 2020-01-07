@@ -9,9 +9,7 @@ cat_title="${data[1]}"
 data_range="${data[2]}"
 data_order="${data[3]}"
 data_sort="${data[4]}"
-
-# get data from API
-source_path=$(./download_data.sh $data_range)
+source_path="${data[5]}"
 
 # Define current order key
 order_key="desc"
