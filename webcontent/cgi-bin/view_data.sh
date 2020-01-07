@@ -9,11 +9,12 @@ arr=()
 SAVE_IFS=$IFS
 IFS='=&'
 set -- $QUERY_STRING
-data_id=$(($2 + 0))
-arr+=( $data_id )
+cat_id=$(($2 + 0))
+arr+=( $cat_id )
 IFS=$SAVE_IFS
 
 i=0
+# Getting Category title with ID from QUERY
 while read c_link c_title c_icon; do
 	if [ $i = ${arr[0]} ]; then
 		arr+=( $c_title )
@@ -49,7 +50,16 @@ if [ ! ${#source_path} = 0 ]; then
 	arr+=( $source_path )
 fi
 
-graph="../img/plot_test.svg"
+# Generate Plot
+if [ $cat_id = 1 ]; then
+	gdata=3
+else
+	gdata=$cat_id
+fi
+
+gdata_path="${source_path}/${( $(./get_filename_by_cat_id.sh "$gdata") )[0]}" # Gibt Dateiname aus
+
+# gplot=$(./get_filename_by_cat_id.sh "$gdata_path") Gibt Pfad von SVG datei aus
 
 if [ ${#arr[1]} = 0 ]; then
 	echo '<div class="alert alert-danger" role="alert">'
@@ -64,15 +74,16 @@ echo '
 '
 echo "		<h1>${arr[1]}daten Presentation</h1>"		
 echo '	<section class="d_diagramm">'
-echo "		<img width="100%" src="${graph}" alt="Plot test" />"
+echo "		<img width="100%" src="${gplot}" alt="Plot test" />"
 echo '	</section>
+
+		$gdata_path
 
 		<section class="d_table"> '
 		
 			./table.sh "${arr[@]}"
 
-			echo "$source_path 12123123123"
-			# rm -rf "$source_path" 2> /dev/null
+			rm -rf "$source_path" 2> /dev/null
 			
 echo '	</section>
 	</main>
