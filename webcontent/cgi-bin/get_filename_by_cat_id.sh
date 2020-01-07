@@ -11,6 +11,9 @@ case $cat_id in
 	2)
 		key="wind"
 		;;
+	3)
+		key="rain_height"
+		;;
 	*)
 		key=""
 		;;
