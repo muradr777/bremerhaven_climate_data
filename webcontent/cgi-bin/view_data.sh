@@ -60,6 +60,7 @@ fi
 gdata_path="${source_path}/${( $(./get_filename_by_cat_id.sh "$gdata") )[0]}" # Gibt Dateiname aus
 
 # gplot=$(./get_filename_by_cat_id.sh "$gdata_path") Gibt Pfad von SVG datei aus
+gplot="../html/plot_test.svg"
 
 if [ ${#arr[1]} = 0 ]; then
 	echo '<div class="alert alert-danger" role="alert">'
@@ -77,7 +78,7 @@ echo '	<section class="d_diagramm">'
 echo "		<img width="100%" src="${gplot}" alt="Plot test" />"
 echo '	</section>
 
-		$gdata_path
+		
 
 		<section class="d_table"> '
 		
