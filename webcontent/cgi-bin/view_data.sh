@@ -28,6 +28,20 @@ if [ ! ${#4} = 0 ]; then
 	arr+=( $data_count )
 fi
 
+data_order=0
+if [ ! ${#6} = 0 ]; then
+	if [ $6 = "asc" ]; then
+		data_order=1
+	fi
+	arr+=( $data_order )
+fi
+
+data_sort=1
+if [ ! ${#8} = 0 ]; then
+	data_order=$(( $8 + 0 ))
+	arr+=( $data_order )
+fi
+
 if [ ${#arr[1]} = 0 ]; then
 	echo '<div class="alert alert-danger" role="alert">'
 	echo "		<b>Error:</b> Kategorie nicht gefunden. <a href="index.sh" class="alert-link">Link nach Hauptseite</a>"
