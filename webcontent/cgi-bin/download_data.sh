@@ -6,6 +6,8 @@
 # -l . It enables logging to file /tmp/dwd_data_logs
 # This script returns the path of the generated data files
 
+if [ "$USER" = "" ]; then USER=www-data; fi
+
 url='https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/recent/tageswerte_KL_00701_akt.zip'
 path="/tmp/${USER}_$$_dwd_data"
 file='tageswerte_KL_00701_akt.zip'
