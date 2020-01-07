@@ -52,15 +52,16 @@ fi
 
 # Generate Plot
 if [ $cat_id = 1 ]; then
-	gdata=3
+	gdataid=3
 else
-	gdata=$cat_id
+	gdataid=$cat_id
 fi
 
-gdata_path="${source_path}/${( $(./get_filename_by_cat_id.sh "$gdata") )[0]}" # Gibt Dateiname aus
+gdata_filename=( $(./get_filename_by_cat_id.sh "$gdataid") )[0]
+gdata_path="${source_path}/[0]}" # Gibt Dateiname aus
 
 # gplot=$(./get_filename_by_cat_id.sh "$gdata_path") Gibt Pfad von SVG datei aus
-gplot="../html/plot_test.svg"
+gplot="../html/img/plot_test.svg"
 
 if [ ${#arr[1]} = 0 ]; then
 	echo '<div class="alert alert-danger" role="alert">'
@@ -88,6 +89,6 @@ echo '	</section>
 	</main>
 '
 
-echo "$gdata_path"
+echo "$gdata_path 1111 $gdata_filename 2222 $source_path"
 
 ./footer1.sh
