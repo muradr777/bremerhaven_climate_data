@@ -22,10 +22,10 @@ while read c_link c_title c_icon; do
 done <<< $(cat data/categories.dat)
 
 
-data_count=7
+data_range=7
 if [ ! ${#4} = 0 ]; then
-	data_count=$(( $4 + 0 ))
-	arr+=( $data_count )
+	data_range=$(( $4 + 0 ))
+	arr+=( $data_range )
 fi
 
 data_order=0
@@ -38,9 +38,18 @@ fi
 
 data_sort=1
 if [ ! ${#8} = 0 ]; then
-	data_order=$(( $8 + 0 ))
-	arr+=( $data_order )
+	data_sort=$(( $8 + 0 ))
+	arr+=( $data_sort )
 fi
+
+# get data from API
+source_path=$(./download_data.sh $data_range)
+
+if [ ! ${#source_path} = 0 ]; then
+	arr+=( $source_path )
+fi
+
+graph="../img/plot_test.svg"
 
 if [ ${#arr[1]} = 0 ]; then
 	echo '<div class="alert alert-danger" role="alert">'
@@ -54,14 +63,16 @@ echo '
 	<main class="wrapper container-fluid">
 '
 echo "		<h1>${arr[1]}daten Presentation</h1>"		
-echo '		
-		<section class="d_diagramm">
-			<img width="100%" src="../img/plot_test.svg" alt="Plot test" />
-		</section>
+echo '	<section class="d_diagramm">'
+echo "		<img width="100%" src="${graph}" alt="Plot test" />"
+echo '	</section>
 
 		<section class="d_table"> '
 		
 			./table.sh "${arr[@]}"
+
+			echo "$source_path 12123123123"
+			# rm -rf "$source_path" 2> /dev/null
 			
 echo '	</section>
 	</main>
