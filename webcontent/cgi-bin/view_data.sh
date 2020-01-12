@@ -65,7 +65,7 @@ echo "$source_path"
 
 ls $source_path
 
-./gnuplot_diagramme.sh $source_path
+./gnuplot_diagramme.sh "/tmp/www-data_1113210_dwd_data"
 
 # gplot=$(./get_filename_by_cat_id.sh "$gdata_path") # Gibt Pfad von SVG datei aus
 gplot="../img/plot_test.svg"
@@ -90,7 +90,7 @@ echo '	</section>
 		
 			./table.sh "${arr[@]}"
 
-			# rm -rf "$source_path" 2> /dev/null
+			rm -rf "$source_path" 2> /dev/null
 			
 echo '	</section>
 	</main>

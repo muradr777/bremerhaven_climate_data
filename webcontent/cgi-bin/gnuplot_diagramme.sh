@@ -19,7 +19,7 @@ wind="$pfad/wind.dat"
 echo "
 set terminal svg size 1200,600
 
-set out "\'${output}temp.svg\'"
+set out "\'${output}/temp.svg\'"
 
 set title "\'Lufttemperatur in Bremerhaven\'"
 set xdata time
