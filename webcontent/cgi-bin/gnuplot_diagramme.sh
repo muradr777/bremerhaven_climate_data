@@ -9,7 +9,6 @@
 # source download_data.sh
 
 pfad=$1
-output=$1
 
 temper="$pfad/temp.dat"
 rain="$pfad/rain_height.dat"
@@ -19,7 +18,7 @@ wind="$pfad/wind.dat"
 echo "
 set terminal svg size 1200,600
 
-set out "\'${output}/temp.svg\'"
+set out "\'${pfad}/temp.svg\'"
 
 set title "\'Lufttemperatur in Bremerhaven\'"
 set xdata time
@@ -28,11 +27,11 @@ set ylabel "\'Temperatur in Celsius\'"
 set timefmt "\'%Y%m%d\'"
 set format x "\'%d %m %y\'"
 plot "\'$temper\'" using 1:2 title "\'Temperatur\'" with linespoints linewidth 3 pointtype 7 linecolor rgb "\'#FF0000\'"
-" > "$output/temp.gp"
+" > "$pfad/temp.gp"
 
-test -e "$output/temp.gp"
+test -e "$pfad/temp.gp"
 if [ $? = 0 ];
-then gnuplot "$output/temp.gp"
+then gnuplot "$pfad/temp.gp"
 else
   echo 'false_temp'
 fi
@@ -41,7 +40,7 @@ fi
 echo "
 set terminal svg size 1200,600
 
-set out "\'${output}rain_height.svg\'"
+set out "\'${pfad}/rain_height.svg\'"
 
 set title "\'Niederschlagsmenge in Bremerhaven\'"
 set xdata time
@@ -65,7 +64,7 @@ fi
 echo "
 set terminal svg size 1200,600
 
-set out "\'${output}wind.svg\'"
+set out "\'${pfad}/wind.svg\'"
 
 set title "\'Windgeschwindigkeit in Bremerhaven\'"
 set xdata time
