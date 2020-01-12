@@ -28,11 +28,11 @@ set ylabel "\'Temperatur in Celsius\'"
 set timefmt "\'%Y%m%d\'"
 set format x "\'%d %m %y\'"
 plot "\'$temper\'" using 1:2 title "\'Temperatur\'" with linespoints linewidth 3 pointtype 7 linecolor rgb "\'#FF0000\'"
-" > "$pfad/temp.gp"
+" > "$output/temp.gp"
 
-test -e "$pfad/temp.gp"
+test -e "$output/temp.gp"
 if [ $? = 0 ];
-then gnuplot "$pfad/temp.gp"
+then gnuplot "$output/temp.gp"
 else
   echo 'false_temp'
 fi

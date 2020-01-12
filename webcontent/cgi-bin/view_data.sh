@@ -65,7 +65,7 @@ echo "$source_path"
 
 output="/tmp/test13"
 
-cat "${source_path}/rain_height.gp"
+cat "${output}/rain_height.gp"
 
 ./gnuplot_diagramme.sh $source_path $output
 
