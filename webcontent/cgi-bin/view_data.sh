@@ -58,12 +58,11 @@ else
 fi
 
 gdata_filename=( $(./get_filename_by_cat_id.sh "$gdataid") )
-gdata_path="${source_path}/${gdata_filename}}" # Gibt Dateiname aus
 
-echo $gdata_path
+echo $source_path
 
-# gplot=$(./get_filename_by_cat_id.sh "$gdata_path") Gibt Pfad von SVG datei aus
-gplot="../img/plot_test.svg"
+gplot=$(./get_filename_by_cat_id.sh "$gdata_path") # Gibt Pfad von SVG datei aus
+# gplot="../img/plot_test.svg"
 
 if [ ${#arr[1]} = 0 ]; then
 	echo '<div class="alert alert-danger" role="alert">'
