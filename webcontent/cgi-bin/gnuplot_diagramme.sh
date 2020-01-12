@@ -10,6 +10,8 @@
 
 pfad=$1
 
+echo $pfad
+
 temper="$pfad/temp.dat"
 rain="$pfad/rain_height.dat"
 wind="$pfad/wind.dat"
