@@ -69,7 +69,7 @@ echo "$source_path"
 echo $( ./gnuplot_diagramme.sh "/tmp/test13")
 
 # gplot=$(./get_filename_by_cat_id.sh "$gdata_path") # Gibt Pfad von SVG datei aus
-gplot="../img/plot_test.svg"
+gplot="../img/rain_height.svg"
 
 if [ ${#arr[1]} = 0 ]; then
 	echo '<div class="alert alert-danger" role="alert">'
@@ -91,7 +91,7 @@ echo '	</section>
 		
 			./table.sh "${arr[@]}"
 
-			# rm -rf "$source_path" 2> /dev/null
+			rm -rf "$source_path" 2> /dev/null
 			
 echo '	</section>
 	</main>
