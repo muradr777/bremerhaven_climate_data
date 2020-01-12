@@ -65,7 +65,7 @@ fi
 echo "
 set terminal svg size 1200,600
 
-set out "\'/var/www/html/docker11170/wind.svg\'"
+set out "\'${output}wind.svg\'"
 
 set title "\'Windgeschwindigkeit in Bremerhaven\'"
 set xdata time
