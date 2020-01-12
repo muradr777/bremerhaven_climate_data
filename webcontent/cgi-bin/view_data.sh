@@ -90,7 +90,7 @@ echo '	</section>
 		
 			./table.sh "${arr[@]}"
 
-			rm -rf "$source_path" 2> /dev/null
+			# rm -rf "$source_path" 2> /dev/null
 			
 echo '	</section>
 	</main>
