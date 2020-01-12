@@ -57,9 +57,11 @@ else
 	gdataid=$cat_id
 fi
 
+plot_output="/var/www/html/docker11257/img/"
+
 gn_filename=( $(./get_filename_by_cat_id.sh "$gdataid") )
 
-./gnuplot_diagramme.sh $source_path
+./gnuplot_diagramme.sh $source_path $plot_output
 
 # gplot=$(./get_filename_by_cat_id.sh "$gdata_path") # Gibt Pfad von SVG datei aus
 gplot="../img/plot_test.svg"

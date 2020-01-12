@@ -6,20 +6,20 @@
 #Zeile 22, 44, 68
 #
 
-source download_data.sh
+# source download_data.sh
 
-pfad="/tmp/${USER}_$$_dwd_data"
+pfad=$1
+output=$2
 
 temper="$pfad/temp.dat"
 rain="$pfad/rain_height.dat"
 wind="$pfad/wind.dat"
 
-
 #Gnuplot Lufttemperatur
 echo "
 set terminal svg size 1200,600
 
-set out "\'/var/www/html/docker11170/temp.svg\'"
+set out "\'${output}temp.svg\'"
 
 set title "\'Lufttemperatur in Bremerhaven\'"
 set xdata time
@@ -41,7 +41,7 @@ fi
 echo "
 set terminal svg size 1200,600
 
-set out "\'/var/www/html/docker11170/rain_height.svg\'"
+set out "\'${output}rain_height.svg\'"
 
 set title "\'Niederschlagsmenge in Bremerhaven\'"
 set xdata time
