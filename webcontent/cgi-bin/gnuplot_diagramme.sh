@@ -9,7 +9,7 @@
 # source download_data.sh
 
 pfad=$1
-output=$2
+output=$1
 
 temper="$pfad/temp.dat"
 rain="$pfad/rain_height.dat"

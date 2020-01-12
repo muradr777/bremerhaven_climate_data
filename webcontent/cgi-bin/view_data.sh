@@ -63,11 +63,9 @@ gn_filename=( $(./get_filename_by_cat_id.sh "$gdataid") )
 
 echo "$source_path"
 
-output="/tmp/test13"
+ls $source_path
 
-cat "${output}/rain_height.gp"
-
-./gnuplot_diagramme.sh $source_path $output
+./gnuplot_diagramme.sh $source_path
 
 # gplot=$(./get_filename_by_cat_id.sh "$gdata_path") # Gibt Pfad von SVG datei aus
 gplot="../img/plot_test.svg"
