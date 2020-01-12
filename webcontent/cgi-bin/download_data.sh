@@ -22,7 +22,7 @@ doit() {
     # download and unpack data
     curl -O "$url"
     unzip "$file"
-    touch test1.svg
+    touch temp.svg wind.svg rain_height.svg
     rm "$file" Metadaten_*
     line=$(($(wc -l $(ls -1rt | grep produkt )| cut -f1 -d' ')-1))
     if [ "$line" -lt "$range" ]; then range=$line ; echo "RANGE TOO LONG: $line lines available" ; fi
