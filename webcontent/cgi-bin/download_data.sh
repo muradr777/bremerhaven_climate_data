@@ -18,12 +18,11 @@ doit() {
 
   echo -e "\n$$ on \e[1;33m$(date)\e[0m in \e[31m$path \e[0m"
   mkdir "$path"
+  chmod a+rwx "$path"
   if cd $path; then
     # download and unpack data
     curl -O "$url"
     unzip "$file"
-    touch temp.svg wind.svg rain_height.svg
-    touch temp.gp wind.gp rain_height.gp
     rm "$file" Metadaten_*
     line=$(($(wc -l $(ls -1rt | grep produkt )| cut -f1 -d' ')-1))
     if [ "$line" -lt "$range" ]; then range=$line ; echo "RANGE TOO LONG: $line lines available" ; fi
