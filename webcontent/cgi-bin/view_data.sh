@@ -58,8 +58,9 @@ else
 fi
 
 gdata_filename=( $(./get_filename_by_cat_id.sh "$gdataid") )
-echo $gdata_filename
-#gdata_path="${source_path}/[0]}" # Gibt Dateiname aus
+gdata_path="${source_path}/${gdata_filename}}" # Gibt Dateiname aus
+
+echo $gdata_path
 
 # gplot=$(./get_filename_by_cat_id.sh "$gdata_path") Gibt Pfad von SVG datei aus
 gplot="../img/plot_test.svg"
