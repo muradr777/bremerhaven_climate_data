@@ -57,12 +57,12 @@ else
 	gdataid=$cat_id
 fi
 
-gdata_filename=( $(./get_filename_by_cat_id.sh "$gdataid") )
+gn_filename=( $(./get_filename_by_cat_id.sh "$gdataid") )
 
-echo $source_path
+./gnuplot_diagramme.sh $source_path
 
-gplot=$(./get_filename_by_cat_id.sh "$gdata_path") # Gibt Pfad von SVG datei aus
-# gplot="../img/plot_test.svg"
+# gplot=$(./get_filename_by_cat_id.sh "$gdata_path") # Gibt Pfad von SVG datei aus
+gplot="../img/plot_test.svg"
 
 if [ ${#arr[1]} = 0 ]; then
 	echo '<div class="alert alert-danger" role="alert">'
@@ -89,7 +89,5 @@ echo '	</section>
 echo '	</section>
 	</main>
 '
-
-# echo "$gdata_path 1111 $gdata_filename 2222 $source_path"
 
 ./footer1.sh
