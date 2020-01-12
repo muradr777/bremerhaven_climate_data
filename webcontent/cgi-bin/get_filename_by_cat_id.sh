@@ -21,5 +21,6 @@ esac
 
 arr[0]="${key}.dat" # filename
 arr[1]="${key}_cols.dat" # cols
+arr[2]="$key"
 
 echo "${arr[@]}"
