@@ -63,7 +63,9 @@ gn_filename=( $(./get_filename_by_cat_id.sh "$gdataid") )
 
 echo "$source_path"
 
-cat "$source_path/temp.gp 112312312"
+ls $source_path
+cat "$source_path/temp.gp"
+echo "12312312"
 
 ./gnuplot_diagramme.sh "$source_path"
 
