@@ -6,8 +6,9 @@
 
 ./clear_tmp.sh
 if [ "$USER" == "step2019team08" ];then
-  ssh mydocker ./deploy.sh master
+  ssh mydocker cd "git/step2019team08-WebProjekt ; ./deploy.sh master"
 else
-  sudo -iu step2019team08 ./deploy.sh master
+  echo "not the right user"
+  exit 1
 fi
 ./prepare_img.sh

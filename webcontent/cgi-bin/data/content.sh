@@ -1,6 +1,6 @@
 main_title="Hallo von"
 team_name="Team 8"
-main_subtitle="In diesem Projekt sollen wir mit Hilfe der Daten vom deutschen Wetterdienst eine dynamische Webanwendung zur darstellung von Klima-relevanten Daten implementieren. Fuer einen Teil des Projekts soll das UML-Diagramm aus SWE1 implementiert werden. Mit Hilfe der verschiedenen Technologien wie Html,cgi,Bash-Scripting und SVG usw werden wir sowohl die Webseite, Scripte, Tabellen und Diagramme erstellen als auch Html reinpacken und im Module trennen. "
+main_subtitle="In diesem Projekt sollen wir mit Hilfe der Daten vom deutschen Wetterdienst eine dynamische Webanwendung zur Darstellung von klimarelevanten Daten implementieren. Fuer einen Teil des Projekts soll das UML-Diagramm aus SWE1 implementiert werden. Mit Hilfe der verschiedenen Technologien wie HTML, cgi, BASH, SVG usw. werden wir sowohl die Webseite, Skripte, Tabellen und Diagramme erstellen als auch die Webseite darstellen und im Module getrennet verwenden. "
 footer_title="Team 8 - Web Application"
 footer_subtitle="$main_subtitle"
 footer_year="2020 | Wetter Projekt Aufgabe"
