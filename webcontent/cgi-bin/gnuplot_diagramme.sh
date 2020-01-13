@@ -83,4 +83,6 @@ elif [ "${file%%*/}" == "wind.dat" ]; then
   else
     echo 'false'
   fi
+else 
+	echo "$file"
 fi
