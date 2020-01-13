@@ -59,12 +59,9 @@ fi
 
 gn_filename=( $(./get_filename_by_cat_id.sh "$gdataid") )
 
-echo "$source_path $gn_filename"
-
-
 # cat "$source_path/temp.gp
 
-gplot="/docker11257/img/plot/$(./gnuplot_diagramme.sh "$source_path")"
+gplot="/docker11257/img/plot/$(./gnuplot_diagramme.sh "${source_path}/${gn_filename}" )"
 
 #cp $source_path/*.svg /var/www/html/docker11257/img/plot
 
