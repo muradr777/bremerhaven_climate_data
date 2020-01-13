@@ -41,6 +41,12 @@ echo '
 	             </div>
 	            </li>
            "
+      elif [ "$title" = "Docs" ]; then
+        echo "
+         <li class="nav-item">
+          <a class="nav-link" href="$link" target=\"_blank\">$title</a>
+         </li>
+        "
       else 
         echo "
 	       <li class="nav-item">
