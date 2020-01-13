@@ -12,7 +12,7 @@ output=/var/www/html/docker11257/img/plot/
 svg_name="$output$$.svg"
 
 #Gnuplot Lufttemperatur
-if [ "${file%%*/}" == "temp.dat" ]; then
+if [ "${file##*/}" == "temp.dat" ]; then
   echo "
   set terminal svg size 1200,600
 
@@ -30,11 +30,11 @@ if [ "${file%%*/}" == "temp.dat" ]; then
   test -e "$pfad/temp.gp"
   if [ $? = 0 ];then 
     gnuplot "$pfad/temp.gp"
-    echo "${svg_name%%*/}"
+    echo "${svg_name##*/}"
   else
     echo 'false'
   fi
-elif [ "${file%%*/}" == "rain_height.dat" ]; then
+elif [ "${file##*/}" == "rain_height.dat" ]; then
   #Gnuplot Niederschlagsmenge
   echo "
   set terminal svg size 1200,600
@@ -55,12 +55,12 @@ elif [ "${file%%*/}" == "rain_height.dat" ]; then
   test -e "$pfad/rain_height.gp"
   if [ $? = 0 ]; then 
     gnuplot "$pfad/rain_height.gp"
-    echo "${svg_name%%*/}"
+    echo "${svg_name##*/}"
   else
     echo 'false'
   fi
 
-elif [ "${file%%*/}" == "wind.dat" ]; then
+elif [ "${file##*/}" == "wind.dat" ]; then
 #Gnuplot Windgeschwindigkeit
   echo "
   set terminal svg size 1200,600
@@ -79,7 +79,7 @@ elif [ "${file%%*/}" == "wind.dat" ]; then
   test -e "$pfad/wind.gp"
   if [ $? = 0 ]; then 
     gnuplot "$pfad/wind.gp"
-    echo "${svg_name%%*/}"
+    echo "${svg_name##*/}"
   else
     echo 'false'
   fi
