@@ -6,81 +6,81 @@
 #Zeile 22, 44, 68
 #
 
-# source download_data.sh
-
-pfad=$1
-
-
-temper="$pfad/temp.dat"
-rain="$pfad/rain_height.dat"
-wind="$pfad/wind.dat"
+file=$1
+pfad=${1%/*}
+output=/var/www/html/docker11257/img/plot/
+svg_name="$output$$.svg"
 
 #Gnuplot Lufttemperatur
-echo "
-set terminal svg size 1200,600
+if [ "${file%%*/}" == "temp.dat" ]; then
+  echo "
+  set terminal svg size 1200,600
 
-set out "\'${pfad}/temp.svg\'"
+  set out "\'${svg_name}\'"
 
-set title "\'Lufttemperatur in Bremerhaven\'"
-set xdata time
-set xlabel "\'Datum\'"
-set ylabel "\'Temperatur in Celsius\'"
-set timefmt "\'%Y%m%d\'"
-set format x "\'%d %m %y\'"
-plot "\'$temper\'" using 1:2 title "\'Temperatur\'" with linespoints linewidth 3 pointtype 7 linecolor rgb "\'#FF0000\'"
-" > "$pfad/temp.gp"
+  set title "\'Lufttemperatur in Bremerhaven\'"
+  set xdata time
+  set xlabel "\'Datum\'"
+  set ylabel "\'Temperatur in Celsius\'"
+  set timefmt "\'%Y%m%d\'"
+  set format x "\'%d %m %y\'"
+  plot "\'$file\'" using 1:2 title "\'Temperatur\'" with linespoints linewidth 3 pointtype 7 linecolor rgb "\'#FF0000\'"
+  " > "${pfad}/temp.gp"
 
-test -e "$pfad/temp.gp"
-if [ $? = 0 ];
-then gnuplot "$pfad/temp.gp"
-else
-  echo 'false_temp'
-fi
+  test -e "$pfad/temp.gp"
+  if [ $? = 0 ];then 
+    gnuplot "$pfad/temp.gp"
+    echo "${svg_name%%*/}"
+  else
+    echo 'false'
+  fi
+elif [ "${file%%*/}" == "rain_height.dat" ]; then
+  #Gnuplot Niederschlagsmenge
+  echo "
+  set terminal svg size 1200,600
 
-#Gnuplot Niederschlagsmenge
-echo "
-set terminal svg size 1200,600
+  set out "\'${svg_name}\'"
 
-set out "\'${pfad}/rain_height.svg\'"
+  set title "\'Niederschlagsmenge in Bremerhaven\'"
+  set xdata time
+  set xlabel "\'Datum\'"
+  set ylabel "\'Niederschlagsmenge in mm\'"
+  set timefmt "\'%Y%m%d\'"
+  set format x "\'%d %m %y\'"
+  set boxwidth 0.85 relative
+  set style fill solid 0.9 border rgb "\'#4169E1\'"
+  plot "\'$file\'" using 1:2 title "\'Niederschlag\'" with boxes lc "\'#4169E1\'"
+  " > "$pfad/rain_height.gp"
 
-set title "\'Niederschlagsmenge in Bremerhaven\'"
-set xdata time
-set xlabel "\'Datum\'"
-set ylabel "\'Niederschlagsmenge in mm\'"
-set timefmt "\'%Y%m%d\'"
-set format x "\'%d %m %y\'"
-set boxwidth 0.85 relative
-set style fill solid 0.9 border rgb "\'#4169E1\'"
-plot "\'$rain\'" using 1:2 title "\'Niederschlag\'" with boxes lc "\'#4169E1\'"
-" > "$pfad/rain_height.gp"
+  test -e "$pfad/rain_height.gp"
+  if [ $? = 0 ]; then 
+    gnuplot "$pfad/rain_height.gp"
+    echo "${svg_name%%*/}"
+  else
+    echo 'false'
+  fi
 
-test -e "$pfad/rain_height.gp"
-if [ $? = 0 ];
-then gnuplot "$pfad/rain_height.gp"
-else
-  echo 'false_rain'
-fi
-
+elif [ "${file%%*/}" == "wind.dat" ]; then
 #Gnuplot Windgeschwindigkeit
-echo "
-set terminal svg size 1200,600
+  echo "
+  set terminal svg size 1200,600
 
-set out "\'${pfad}/wind.svg\'"
+  set out "\'${svg_name}\'"
 
-set title "\'Windgeschwindigkeit in Bremerhaven\'"
-set xdata time
-set xlabel "\'Datum\'"
-set ylabel "\'Windgeschwindigkeit in m/sec\'"
-set timefmt "\'%Y%m%d\'"
-set format x "\'%d %m %y\'"
-plot "\'$wind\'" using 1:2 title"\'Windgeschwindigkeit\'" with linespoints linewidth 3 pointtype 7 linecolor rgb "\'#778899\'"
-" > "$pfad/wind.gp"
+  set title "\'Windgeschwindigkeit in Bremerhaven\'"
+  set xdata time
+  set xlabel "\'Datum\'"
+  set ylabel "\'Windgeschwindigkeit in m/sec\'"
+  set timefmt "\'%Y%m%d\'"
+  set format x "\'%d %m %y\'"
+  plot "\'$file\'" using 1:2 title"\'Windgeschwindigkeit\'" with linespoints linewidth 3 pointtype 7 linecolor rgb "\'#778899\'"
+  " > "$pfad/wind.gp"
 
-test -e "$pfad/wind.gp"
-if [ $? = 0 ];
-then gnuplot "$pfad/wind.gp"
-else
-  echo 'false_wind'
+  test -e "$pfad/wind.gp"
+  if [ $? = 0 ]; then 
+    gnuplot "$pfad/wind.gp"
+    echo "${svg_name%%*/}"
+  else
+    echo 'false'
+  fi
 fi
-
-#rm -r $pfad
