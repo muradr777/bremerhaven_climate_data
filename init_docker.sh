@@ -6,7 +6,7 @@
 
 ./clear_tmp.sh
 if [ "$USER" == "step2019team08" ];then
-  ssh mydocker cd "git/step2019team08-WebProjekt ; ./deploy.sh master"
+  ssh mydocker "cd git/step2019team08-WebProjekt ; ./deploy.sh master"
 else
   echo "not the right user"
   exit 1
