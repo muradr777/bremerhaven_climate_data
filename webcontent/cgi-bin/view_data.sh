@@ -59,7 +59,7 @@ fi
 
 gn_filename=( $(./get_filename_by_cat_id.sh "$gdataid") )
 
-echo "$source_path"
+echo "$source_path $gn_filename"
 
 
 # cat "$source_path/temp.gp
