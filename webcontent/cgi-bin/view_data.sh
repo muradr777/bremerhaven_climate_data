@@ -64,9 +64,9 @@ echo "$source_path"
 
 # cat "$source_path/temp.gp
 
-$( ./gnuplot_diagramme.sh "$source_path")
+./gnuplot_diagramme.sh "$source_path"
 
-cp $source_path/*.svg /var/www/html/img/
+cp $source_path/*.svg /var/www/html/docker11257/img/plot
 
 # gplot=$(./get_filename_by_cat_id.sh "$gdata_path") # Gibt Pfad von SVG datei aus
 gplot="../img/plot_test.svg"

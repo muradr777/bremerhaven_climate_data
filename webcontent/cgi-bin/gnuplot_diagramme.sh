@@ -10,6 +10,7 @@
 
 pfad=$1
 
+
 temper="$pfad/temp.dat"
 rain="$pfad/rain_height.dat"
 wind="$pfad/wind.dat"
