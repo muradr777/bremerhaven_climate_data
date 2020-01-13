@@ -59,7 +59,7 @@ fi
 
 gn_filename=( $(./get_filename_by_cat_id.sh "$gdataid") )
 
-gplot="/docker11257/img/plot/$(./gnuplot_diagramme.sh "${source_path}/${gn_filename}" 2>&1)" 
+gplot="/docker11257/img/plot/$(./gnuplot_diagramme.sh "${source_path}/${gn_filename}" )" 
 
 if [ ${#arr[1]} = 0 ]; then
 	echo '<div class="alert alert-danger" role="alert">'
