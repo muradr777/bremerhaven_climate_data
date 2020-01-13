@@ -1,2 +1,0 @@
-#Redirect to cgi-bin/index.sh
-RedirectPermanent "/docker11257/index.html" "/docker11257/cgi-bin/index.sh?originalurl="
