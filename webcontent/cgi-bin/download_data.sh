@@ -42,7 +42,7 @@ if [ "$#" -gt "0" ]
 fi
 
 if [ "$log" == "true" ]; then
-  doit >>/tmp/dwd_data_logs 2>&1
+  doit $days >>/tmp/dwd_data_logs 2>&1
 else
   doit $days >/dev/null 2>&1
 fi
