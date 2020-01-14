@@ -13,6 +13,10 @@ path="/tmp/${USER}_$$_dwd_data"
 file='tageswerte_KL_00701_akt.zip'
 val=''
 
+get_last() {
+  tail -n "$1" $(ls -1rt produkt_* | tail -n 1) | cut -f "2,$2" -d ';' | sed 's/ //g; s/;/ /g' | grep -v '-999' > "$3.dat"
+}
+
 doit() {
   if [ "$1" != "" ] && [ "$1" -gt "0" ]; then range=$1; else range=30; fi
 
@@ -26,11 +30,14 @@ doit() {
     rm "$file" Metadaten_*
     line=$(($(wc -l $(ls -1rt | grep produkt )| cut -f1 -d' ')-1))
     if [ "$line" -lt "$range" ]; then range=$line ; echo "RANGE TOO LONG: $line lines available" ; fi
-    tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,14 -d ';' | sed 's/ //g; s/;/ /g' > temp.dat
-    tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,5 -d ';' | sed 's/ //g; s/;/ /g' > wind.dat
-    tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,7 -d ';' | sed 's/ //g; s/;/ /g' > rain_height.dat
-    tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,8 -d ';' | sed 's/ //g; s/;/ /g; s/ 4/ 0/g; s/ 6/ 1/g; s/ 7/ 2/g; s/ 8/ 3/g; s/ 9/ 0/g' > rain_form.dat
-    tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,7,8 -d ';' | sed 's/ //g; s/;/ /g; s/ 4/ 0/g; s/ 6/ 1/g; s/ 7/ 2/g; s/ 8/ 3/g; s/ 9/ 0/g' > rain_all.dat
+    get_last "$range" 14 temp
+    get_last "$range" 5 wind
+    get_last "$range" 7 rain_height
+    #tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,14 -d ';' | sed 's/ //g; s/;/ /g' > temp.dat
+    #tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,5 -d ';' | sed 's/ //g; s/;/ /g' > wind.dat
+    #tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,7 -d ';' | sed 's/ //g; s/;/ /g' > rain_height.dat
+    #tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,8 -d ';' | sed 's/ //g; s/;/ /g; s/ 4/ 0/g; s/ 6/ 1/g; s/ 7/ 2/g; s/ 8/ 3/g; s/ 9/ 0/g' > rain_form.dat
+    #tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,7,8 -d ';' | sed 's/ //g; s/;/ /g; s/ 4/ 0/g; s/ 6/ 1/g; s/ 7/ 2/g; s/ 8/ 3/g; s/ 9/ 0/g' > rain_all.dat
 
     #rm -rf "$path"
   fi
