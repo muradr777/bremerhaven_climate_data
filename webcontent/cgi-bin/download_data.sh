@@ -30,12 +30,12 @@ doit() {
     rm "$file" Metadaten_*
     line=$(($(wc -l $(ls -1rt | grep produkt )| cut -f1 -d' ')-1))
     if [ "$line" -lt "$range" ]; then range=$line ; echo "RANGE TOO LONG: $line lines available" ; fi
-    get_last "$range" 14 temp
-    get_last "$range" 5 wind
-    get_last "$range" 7 rain_height
-    #tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,14 -d ';' | sed 's/ //g; s/;/ /g' > temp.dat
-    #tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,5 -d ';' | sed 's/ //g; s/;/ /g' > wind.dat
-    #tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,7 -d ';' | sed 's/ //g; s/;/ /g' > rain_height.dat
+    #get_last "$range" 14 temp
+    #get_last "$range" 5 wind
+    #get_last "$range" 7 rain_height
+    tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,14 -d ';' | sed 's/ //g; s/;/ /g' > temp.dat
+    tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,5 -d ';' | sed 's/ //g; s/;/ /g' > wind.dat
+    tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,7 -d ';' | sed 's/ //g; s/;/ /g' > rain_height.dat
     #tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,8 -d ';' | sed 's/ //g; s/;/ /g; s/ 4/ 0/g; s/ 6/ 1/g; s/ 7/ 2/g; s/ 8/ 3/g; s/ 9/ 0/g' > rain_form.dat
     #tail -n "$range" $(ls -1rt produkt_* | tail -n 1) | cut -f 2,7,8 -d ';' | sed 's/ //g; s/;/ /g; s/ 4/ 0/g; s/ 6/ 1/g; s/ 7/ 2/g; s/ 8/ 3/g; s/ 9/ 0/g' > rain_all.dat
 
